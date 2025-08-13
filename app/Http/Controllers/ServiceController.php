@@ -12,17 +12,24 @@ use Illuminate\Support\Facades\Auth;
 
 class ServiceController extends Controller
 {
-    public function ShowServices(Request $request): JsonResponse
+    public function ShowServices(Request $request)
     {
         $validatedData = $request->validate([
-            'company_events_id' => ['required', 'integer', 'exists:company_events,id'],
+            'company_event_id' => 'required|integer',
         ]);
 
-        $services = Service::where('company_events_id', $validatedData['company_events_id'])->get();
+        $services = Service::where('company_event_id', $validatedData['company_event_id'])->get();
 
-        return response()->json($services, 200);
+        if ($services->isEmpty()) {
+            return response()->json([
+                'message' => 'No services found for the given company_event_id'
+            ], 404);
+        }
+
+        return response()->json([
+            'services' => $services
+        ]);
     }
-
 
 
     public function store(StoreServiceRequest $request)
@@ -32,19 +39,19 @@ class ServiceController extends Controller
         $company = $user->company;
 
         if (!$company) {
-            return response()->json(['message' =>__('service.You don\'t have a Company')], 400);
+            return response()->json(['message' => __('service.You don\'t have a Company')], 400);
         }
 
 
         $companyEvent = $company->companyEvents()->find($request->company_events_id);
 
         if (!$companyEvent) {
-            return response()->json(['message' =>__('service.Not your Company')], 403);
+            return response()->json(['message' => __('service.Not your Company')], 403);
         }
 
         $service = Service::create($request->validated());
 
-        return response()->json(['message' =>__('service.You Added the Service Successfully'), 'service' => $service], 201);
+        return response()->json(['message' => __('service.You Added the Service Successfully'), 'service' => $service], 201);
     }
 
     public function addImage(Request $request): JsonResponse
@@ -56,7 +63,7 @@ class ServiceController extends Controller
 
         $path = $request->file('image')->store('service_images', 'public');
 
-         ServiceImage::create([
+        ServiceImage::create([
             'service_id' => $validated['service_id'],
             'image_url' => $path,
         ]);
@@ -79,6 +86,4 @@ class ServiceController extends Controller
             'images' => $images,
         ], 200);
     }
-
-
 }
