@@ -29,12 +29,14 @@ Route::middleware('lang')->group(function () {
     route::post('requestPasswordReset', [UserController::class, 'requestPasswordReset']);
     route::post('resetPassword', [UserController::class, 'resetPassword']);
 
-   Route::middleware('auth:sanctum')->group(function () {
+    Route::middleware('auth:sanctum')->group(function () {
         Route::post('send-verification-code', [VerificationController::class, 'send'])->middleware(VerifyCodeRateLimit::class);
         Route::post('verify-verification-code', [VerificationController::class, 'verify']);
+
+
         Route::get('/companies/{company}/events', [CompanyController::class, 'indexCompanyEvents']);
-
-
+        Route::get('/venues/{company}', [VenueController::class, 'getCompanyVenues']);
+        Route::get('venueGetImages', [VenueController::class, 'getImages']);
 
 
         Route::middleware('verified')->group(function () {
@@ -68,7 +70,6 @@ Route::middleware('lang')->group(function () {
             // Venue Routes
             route::delete('deleteVenue', [BookingController::class, 'deleteVenue']);
             Route::get('/venues/{venue}', [VenueController::class, 'show']);
-            Route::get('/venues/{company}', [VenueController::class, 'getCompanyVenues']);
 
 
             // Rating Routes
@@ -111,8 +112,8 @@ Route::middleware('lang')->group(function () {
 
             // Venue Routes
             Route::apiResource('venues', VenueController::class);
+            Route::put('/venues/{id}', [VenueController::class, 'update']);
             Route::post('venuesAddImage', [VenueController::class, 'addImage']);
-            Route::get('venueGetImages',[VenueController::class, 'getImages']);
 
             Route::apiResource('services', ServiceController::class);
 
@@ -120,7 +121,7 @@ Route::middleware('lang')->group(function () {
             Route::patch('/company/{id}/info', [CompanyController::class, 'updateInfo']);
             Route::post('/company/{id}/image', [CompanyController::class, 'updateImage']);
         });
-        Route::get('servicesGetImage',[ServiceController::class, 'getImages']);
+        Route::get('servicesGetImage', [ServiceController::class, 'getImages']);
 
         Route::middleware('CheckAdmin')->group(function () {
             // Get Users
@@ -137,9 +138,13 @@ Route::middleware('lang')->group(function () {
             route::get('getUser/{id}', [UserController::class, 'show']);
 
             // Event Routes
-            route::post('addEventAdmin',[EventController::class, 'addEventAdmin']);
-            route::delete('deleteEventAdmin',[EventController::class, 'deleteEventAdmin']);
-            route::post('addImageEvent',[EventController::class, 'addImageEvent']);
+            route::post('addEventAdmin', [EventController::class, 'addEventAdmin']);
+            route::delete('deleteEventAdmin', [EventController::class, 'deleteEventAdmin']);
+            route::post('addImageEvent', [EventController::class, 'addImageEvent']);
+
+
+
+            Route::get('/venues', [VenueController::class, 'getAllVenues']);
         });
     });
 });

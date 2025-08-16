@@ -12,7 +12,7 @@ class UpdateVenueRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,13 +23,13 @@ class UpdateVenueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'venue_name' =>[
-                'required',
+            'venue_name' => [
+                'sometimes',
+                'nullable',
                 'string',
-                Rule::unique('venues')->ignore($this->route('venue')),
-                'sometimes|required'
+                Rule::unique('venues', 'venue_name')->ignore($this->route('venue')),
             ],
-            'address' => 'string|sometimes|required',
+            'address' => 'sometimes|required|string',
             'capacity' => 'sometimes|required|integer|min:10',
             'venue_price' => 'sometimes|required|numeric|min:0',
         ];
