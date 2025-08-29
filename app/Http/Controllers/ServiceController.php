@@ -87,11 +87,6 @@ class ServiceController extends Controller
             'images' => $images,
         ], 200);
     }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> c2db34112998cfbaf307f304d75f1ce96d30fc5e
     public function update(UpdateServiceRequest $request, $id)
     {
         $user = Auth::user();
@@ -103,22 +98,14 @@ class ServiceController extends Controller
 
         $company = $user->company;
         if (!$company) {
-<<<<<<< HEAD
-            return response()->json(['message' => __('service.You don\'t have a Company')], 400);
-=======
             return response()->json(['message' => ('service.You don\'t have a Company')], 400);
->>>>>>> c2db34112998cfbaf307f304d75f1ce96d30fc5e
         }
 
         if ($service->companyEvent->company->user_id !== $user->id) {
             return response()->json(['message' => 'Unauthorized'], 403);
         }
 
-<<<<<<< HEAD
-        $duplicate = Service::where('company_event_id', $service->company_event_id)
-=======
         $duplicate = Service::where('company_events_id', $service->company_events_id)
->>>>>>> c2db34112998cfbaf307f304d75f1ce96d30fc5e
             ->where('service_name', $request->service_name)
             ->where('id', '!=', $service->id)
             ->exists();
@@ -129,11 +116,7 @@ class ServiceController extends Controller
 
         // $companyEvent = $company->companyEvents()->find($request->company_event_id);
         // if (!$companyEvent) {
-<<<<<<< HEAD
-        //     return response()->json(['message' => __('service.Not your Company')], 403);
-=======
         //     return response()->json(['message' => ('service.Not your Company')], 403);
->>>>>>> c2db34112998cfbaf307f304d75f1ce96d30fc5e
         // }
 
         // check for changes
@@ -150,11 +133,6 @@ class ServiceController extends Controller
         ], 200);
     }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> c2db34112998cfbaf307f304d75f1ce96d30fc5e
     public function destroy($id)
     {
         $user = Auth::user();
@@ -181,10 +159,7 @@ class ServiceController extends Controller
             'message' => 'Service deleted successfully.'
         ], 200);
     }
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> c2db34112998cfbaf307f304d75f1ce96d30fc5e
 }
