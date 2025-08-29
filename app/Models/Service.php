@@ -12,7 +12,7 @@ class Service extends Model
 
     public function companyEvent(): BelongsTo
     {
-        return $this->belongsTo(CompanyEvent::class);
+        return $this->belongsTo(CompanyEvent::class,'company_events_id');
     }
 
     public function serviceImages(): HasMany
