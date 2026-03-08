@@ -1,0 +1,847 @@
+{
+	"info": {
+		"_postman_id": "29ce0986-43a9-43a4-88d7-1b43095629f7",
+		"name": "Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39977611",
+		"_collection_link": "https://keep-it-on-god.postman.co/workspace/eventiq~73ed9110-eb2d-4533-80f6-b1e4a41b23b8/collection/39614831-29ce0986-43a9-43a4-88d7-1b43095629f7?action=share&source=collection_link&creator=39977611"
+	},
+	"item": [
+		{
+			"name": "createBooking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/createBooking?start_time=8:00 pm&end_time=10:00 pm&booking_date=2030/03/03&number_of_invites=100",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"createBooking"
+					],
+					"query": [
+						{
+							"key": "start_time",
+							"value": "8:00 pm"
+						},
+						{
+							"key": "end_time",
+							"value": "10:00 pm"
+						},
+						{
+							"key": "booking_date",
+							"value": "2030/03/03"
+						},
+						{
+							"key": "number_of_invites",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ShowEventes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer {{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/api/showEvents",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"showEvents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showProviders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer {{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/showProviders?event_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"showProviders"
+					],
+					"query": [
+						{
+							"key": "event_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showServices",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en;q=1.0, ar;q=0.9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company_events_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/showServices?company_event_id=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"showServices"
+					],
+					"query": [
+						{
+							"key": "company_event_id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showVenue",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/showVenue?company_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"showVenue"
+					],
+					"query": [
+						{
+							"key": "company_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SelectEvent",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|7qD6ekw9yJIzsVEnMcAoGY2n7rfX91IjZpPnIL6nede98bc0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/selectEvent?event_id=1&booking_id=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"selectEvent"
+					],
+					"query": [
+						{
+							"key": "event_id",
+							"value": "1"
+						},
+						{
+							"key": "booking_id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SelectProvider",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|7qD6ekw9yJIzsVEnMcAoGY2n7rfX91IjZpPnIL6nede98bc0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/selectProvider?booking_id=3&company_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"selectProvider"
+					],
+					"query": [
+						{
+							"key": "booking_id",
+							"value": "3"
+						},
+						{
+							"key": "company_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "selectService",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|7qD6ekw9yJIzsVEnMcAoGY2n7rfX91IjZpPnIL6nede98bc0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/selectService?booking_id=3&service_id=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"selectService"
+					],
+					"query": [
+						{
+							"key": "booking_id",
+							"value": "3"
+						},
+						{
+							"key": "service_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "selectVenue",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|7qD6ekw9yJIzsVEnMcAoGY2n7rfX91IjZpPnIL6nede98bc0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/selectVenue?booking_id=3&venue_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"selectVenue"
+					],
+					"query": [
+						{
+							"key": "booking_id",
+							"value": "3"
+						},
+						{
+							"key": "venue_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirmBooking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/confirmBooking?booking_id=6",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"confirmBooking"
+					],
+					"query": [
+						{
+							"key": "booking_id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateQuantityService",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "booking_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "service_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "service_quantity",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/updateQuantityService?booking_id=1&service_id=1&service_quantity=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"updateQuantityService"
+					],
+					"query": [
+						{
+							"key": "booking_id",
+							"value": "1"
+						},
+						{
+							"key": "service_id",
+							"value": "1"
+						},
+						{
+							"key": "service_quantity",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteServiceBooking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/deleteServiceBooking?booking_id&service_id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"deleteServiceBooking"
+					],
+					"query": [
+						{
+							"key": "booking_id",
+							"value": null
+						},
+						{
+							"key": "service_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteVenue",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/deleteVenue?booking_id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"deleteVenue"
+					],
+					"query": [
+						{
+							"key": "booking_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rate Booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "booking_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/ratings",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ratings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelBooking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/api/cancelBooking?booking_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"cancelBooking"
+					],
+					"query": [
+						{
+							"key": "booking_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddLocation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "booking_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/addLocation",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"addLocation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateLocation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/updateLocation?booking_id=1&location=qalla",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"updateLocation"
+					],
+					"query": [
+						{
+							"key": "booking_id",
+							"value": "1"
+						},
+						{
+							"key": "location",
+							"value": "qalla"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteLocation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/deleteLocation?booking_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"deleteLocation"
+					],
+					"query": [
+						{
+							"key": "booking_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

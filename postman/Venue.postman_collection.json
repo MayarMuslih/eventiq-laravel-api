@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "d7cf9f90-d8b0-45fe-8abe-fe36d1619d2b",
+		"name": "Venue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39977611",
+		"_collection_link": "https://keep-it-on-god.postman.co/workspace/eventiq~73ed9110-eb2d-4533-80f6-b1e4a41b23b8/collection/39977611-d7cf9f90-d8b0-45fe-8abe-fe36d1619d2b?action=share&source=collection_link&creator=39977611"
+	},
+	"item": [
+		{
+			"name": "Get Own Venues",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|2VVfKHlbhCgKvPGJsbM9bSROWtno5XZWqHpYbSU272e7c3a4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/venues",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"venues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Venue",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "46|7fGHpl8M4T1YzBdY17NRTn0Q5iw4ZxZvulQHDpAH5c196cb3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "venue_name",
+							"value": "hello",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "jaramana",
+							"type": "text"
+						},
+						{
+							"key": "capacity",
+							"value": "350",
+							"type": "text"
+						},
+						{
+							"key": "venue_price",
+							"value": "1000000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/venues",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"venues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venue Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/venues/{id}",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"venues",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venue Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "46|7fGHpl8M4T1YzBdY17NRTn0Q5iw4ZxZvulQHDpAH5c196cb3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "venue_name",
+							"value": "hello8",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "jaramana3",
+							"type": "text"
+						},
+						{
+							"key": "capacity",
+							"value": "350",
+							"type": "text"
+						},
+						{
+							"key": "venue_price",
+							"value": "1000000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/venues/17",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"venues",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venue Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "46|7fGHpl8M4T1YzBdY17NRTn0Q5iw4ZxZvulQHDpAH5c196cb3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/venues/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"venues",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "venuesAddImage",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "venue_id",
+							"value": "19",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Dunder Mifflin/Pictures/f7a2f1d76ab845bfc4962e795c6c7794.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/venuesAddImage",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"venuesAddImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "venueGetImages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/venueGetImages?venue_id=19",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"venueGetImages"
+					],
+					"query": [
+						{
+							"key": "venue_id",
+							"value": "19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Company Venues",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "43|rGFzj83xDLIx8MviKeC6o3NKYqiTwcRCVlyf82nm44aa5221",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/venues/10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"venues",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All venues",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "43|rGFzj83xDLIx8MviKeC6o3NKYqiTwcRCVlyf82nm44aa5221",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/venues",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"venues"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

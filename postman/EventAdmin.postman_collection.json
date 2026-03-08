@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "73e7c1e2-afb4-4815-b099-f932dbf83c5e",
+		"name": "EventAdmin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39977611",
+		"_collection_link": "https://keep-it-on-god.postman.co/workspace/eventiq~73ed9110-eb2d-4533-80f6-b1e4a41b23b8/collection/39614831-73e7c1e2-afb4-4815-b099-f932dbf83c5e?action=share&source=collection_link&creator=39977611"
+	},
+	"item": [
+		{
+			"name": "AddEvent",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}1|U4LJ1Udm7q4N2KFHZHTYZ3Tu5R9eZVo3n9VUqcmm9d30adf9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "event_name",
+							"value": "Summer Slam",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "WWE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/addEventAdmin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"addEventAdmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddImageEvent",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "event_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/kaisa/Desktop/photo_2024-06-08_01-53-39.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/addImageEvent",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"addImageEvent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEvent",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/api/deleteEventAdmin?event_id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"deleteEventAdmin"
+					],
+					"query": [
+						{
+							"key": "event_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

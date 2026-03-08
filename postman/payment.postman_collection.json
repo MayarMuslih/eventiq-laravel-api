@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "8653a7dd-9941-41a4-85db-d243a2193b61",
+		"name": "payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39977611",
+		"_collection_link": "https://keep-it-on-god.postman.co/workspace/eventiq~73ed9110-eb2d-4533-80f6-b1e4a41b23b8/collection/39614831-8653a7dd-9941-41a4-85db-d243a2193b61?action=share&source=collection_link&creator=39977611"
+	},
+	"item": [
+		{
+			"name": "payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "booking_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "payment_method_id",
+							"value": "pm_1ReLL7DFKGy7XMugTTW8P2Ah",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/payment",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAccountStripe",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/createAccountStripe?country",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"createAccountStripe"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAccountStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/getAccountStatus",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"getAccountStatus"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

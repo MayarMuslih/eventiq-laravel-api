@@ -1,66 +1,224 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Eventiq – Event Management & Booking Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+EventIQ is a system for an event management and booking platform.
+The platform allows users to discover events, book services, and interact with event providers, while companies can manage their services, venues, and bookings through the system.
 
-## About Laravel
+The backend is built using Laravel and provides RESTful APIs consumed by a mobile application for users and a web dashboard for administrators and service providers.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Project Status
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This project was developed as a university team project and serves as a backend system for an event management and booking platform. The repository is maintained as a portfolio project demonstrating backend API development using Laravel.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Authentication & Account Management
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* User registration and login
+* Password reset functionality
+* Account verification using verification codes
+* Secure authentication using Laravel Sanctum
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### User Profiles
 
-## Laravel Sponsors
+* Create and update user profiles
+* Upload profile images
+* Manage personal account information
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Events System
 
-### Premium Partners
+* Browse available events
+* Admin management of events
+* Event image management
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Booking System
 
-## Contributing
+Multi-step booking workflow that allows users to:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Create a booking
+2. Select an event
+3. Choose a provider
+4. Choose a venue
+5. Select services
+6. Confirm the booking
 
-## Code of Conduct
+Users can also:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* Cancel bookings
+* Update service quantities
+* Remove services from bookings
 
-## Security Vulnerabilities
+### Companies & Providers
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Service providers can:
+
+* Create company profiles
+* Manage company information and images
+* Add services
+* Add venues
+* Attach events to their company
+
+### Venues & Services
+
+Providers can manage:
+
+* Event venues
+* Service offerings
+* Service images
+* Venue images
+
+### Ratings System
+
+Users can rate companies and view average ratings.
+
+### Notifications
+
+The system supports push notifications using Firebase for user updates and booking notifications.
+
+### Payments
+
+Online payment integration using Stripe Connect allows providers to receive payments for their services.
+
+### Admin Panel Features
+
+Administrators can:
+
+* Manage users and providers
+* Review event requests
+* Approve or reject event submissions
+* Manage events and venues
+* Monitor system activity
+
+---
+
+## Tech Stack
+
+Backend Framework:
+
+* Laravel
+
+Programming Language:
+
+* PHP
+
+Database:
+
+* MySQL
+
+Authentication:
+
+* Laravel Sanctum
+
+Payment Integration:
+
+* Stripe Connect
+
+Push Notifications:
+
+* Firebase Cloud Messaging
+
+API Style:
+
+* RESTful APIs
+
+---
+
+## System Architecture
+
+The platform supports multiple types of users:
+
+* Users (mobile app clients)
+* Service Providers / Companies (web dashboard)
+* Administrators (web dashboard)
+
+The backend API handles all business logic including authentication, booking workflow, payments, and notifications.
+
+---
+
+## API Modules
+
+The backend API includes endpoints for:
+
+* Authentication
+* Profile management
+* Events
+* Companies
+* Venues
+* Services
+* Booking system
+* Ratings
+* Notifications
+* Payment processing
+
+---
+
+## Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/MayarMuslih/eventiq-laravel-api.git
+```
+
+Install dependencies:
+
+```
+composer install
+```
+
+Create environment file:
+
+```
+cp .env.example .env
+```
+
+Generate application key:
+
+```
+php artisan key:generate
+```
+
+Run migrations:
+
+```
+php artisan migrate
+```
+
+Start the server:
+
+```
+php artisan serve
+```
+
+---
+
+## API Testing
+
+The API can be tested using the included Postman collection in the `/postman collections` directory.
+
+---
+
+## Screenshots
+
+pictures of the mobile and dashboard interfaces can be found in the `/front interfaces` directory.
+
+---
+
+## My Role
+
+I collaborated with the team on developing the backend API of the platform using Laravel. My contributions included:
+
+* System architecture
+* Database design
+* Authentication system
+* Booking workflow
+* Payment integration with Stripe
+* Notifications integration
+* REST API development
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project was developed as an academic and portfolio project.

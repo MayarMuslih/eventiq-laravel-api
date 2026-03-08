@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "4182e3e3-ff8b-4d1d-a4e6-972b3251c10e",
+		"name": "profile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39977611",
+		"_collection_link": "https://keep-it-on-god.postman.co/workspace/eventiq~73ed9110-eb2d-4533-80f6-b1e4a41b23b8/collection/40866649-4182e3e3-ff8b-4d1d-a4e6-972b3251c10e?action=share&source=collection_link&creator=39977611"
+	},
+	"item": [
+		{
+			"name": "Profile Save",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "17|tFyVu78EH2G1gOGaLT1JSSLidtrbjyTviPey6oot28184fbe",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "img",
+							"type": "file",
+							"src": "postman-cloud:///1efd1f2a-71cf-4b80-a6cc-36d1872fe048"
+						},
+						{
+							"key": "phone",
+							"value": "0999999994",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "1999/04/04",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profiles",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile Info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "17|tFyVu78EH2G1gOGaLT1JSSLidtrbjyTviPey6oot28184fbe",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profiles/17",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profiles",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile Info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "17|tFyVu78EH2G1gOGaLT1JSSLidtrbjyTviPey6oot28184fbe",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "phone",
+							"value": "0988888889",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "1995/1/2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profile/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile Image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "10|T65FUNDfeWKiDz4sWk7er7Tx8lGrPlr2Oai84u8ocf97ef76",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "img",
+							"type": "file",
+							"src": "/C:/Users/Dunder Mifflin/Pictures/Screenshots/Screenshot (5).png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profile/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
