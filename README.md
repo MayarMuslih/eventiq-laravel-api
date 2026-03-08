@@ -195,13 +195,13 @@ php artisan serve
 
 ## API Testing
 
-The API can be tested using the included Postman collection in the `/postman collections` directory.
+The API can be tested using the included Postman collection in the `/postman` directory.
 
 ---
 
 ## Screenshots
 
-pictures of the mobile and dashboard interfaces can be found in the `/front interfaces` directory.
+pictures of the mobile and dashboard interfaces can be found in the `/screenshots` directory.
 
 ---
 
